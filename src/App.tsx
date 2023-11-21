@@ -1,12 +1,21 @@
-import { FC } from 'react';
-
+import { useState } from 'react';
+import { Select } from './components/todo'
 import './style.css';
 
-export const App: FC<{ name: string }> = ({ name }) => {
+export const App: React.FC = () => {
+  const [value, setValue] = useState<string>('first')
   return (
     <div>
-      <h1>Hello {name}!</h1>
-      <p>Start editing to see some magic happen :)</p>
+      <Select 
+        label="Select a value: "
+        value={value}
+        options={[
+          { label: "First", value: 'first'},
+          { label: "Second", value: 'second'},
+          { label: "Third", value: 'third'}
+        ]}
+        onChange={(e) => setValue(e)}
+        />
     </div>
   );
 };
