@@ -11,7 +11,7 @@ type SelectProps = {
   onChange: (value: string) => void;
 };
 
-const Select: React.FC<SelectProps> = ({
+export const Select: React.FC<SelectProps> = ({
   label,
   value,
   options,
